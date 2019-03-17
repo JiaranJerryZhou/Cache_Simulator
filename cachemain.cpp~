@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <time.h>
+
+#include <cstdio>
+#include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+#include "cache.h"
+#include "cache_simu.h"
+using namespace std;
+int main(int argc, char ** argv) {
+  ifstream inFile1;
+  // ifstream inFile2;                                                                       
+
+  inFile1.open("Dinero10000.din");
+  // inFile2.open("DineroFull.din");                                                         
+  string line;
+
+  //cache_simu * cs1 = new cache_simu(1, true, true, "1 32 8192 0 0", "", 0, 0, 0);
+   cache_simu * cs2 =                                                                      
+    new cache_simu(2, false, true, "2 64 32768 0 1 2 64 32768 0 1", "8 64 524288 1 1", 0, \
+0, 0);                                                                                       
+   /*while (getline(inFile1, line)) {
+    cs1->parse(line);
+  }
+   */
+   while (getline(inFile2, line)) {                                                       
+    cs2 -> parse(line);                                                                      
+    }
+
+   //cs1->print();
+  cs2->print();                                                                           
+  //inFile1.close();
+  inFile2.close();                                                                        
+}
